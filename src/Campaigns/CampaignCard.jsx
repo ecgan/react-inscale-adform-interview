@@ -2,13 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Card, Descriptions, Statistic, Row, Col } from 'antd'
 
+import CampaignActiveTag from './CampaignActiveTag'
+
 const CampaignListItem = (props) => {
   const { campaign } = props
 
   return (
     <Card
       title={campaign.name}
-      extra=''
+      extra={
+        <CampaignActiveTag campaign={campaign} />
+      }
     >
       <Row
         type='flex'
