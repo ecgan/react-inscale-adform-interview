@@ -14,7 +14,7 @@ const grid = {
   xxl: 4
 }
 
-const CampaignsListing = (props) => {
+const CampaignList = (props) => {
   const { campaigns = [] } = props
 
   if (campaigns.length === 0) {
@@ -39,8 +39,8 @@ const CampaignsListing = (props) => {
   )
 }
 
-CampaignsListing.propTypes = {
+CampaignList.propTypes = {
   campaigns: PropTypes.array
 }
 
-export default CampaignsListing
+export default CampaignList
