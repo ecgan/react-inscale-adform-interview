@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Empty, List } from 'antd'
 
-import CampaignListItem from './CampaignListItem'
+import CampaignCard from './CampaignCard'
 
 const grid = {
   gutter: 16,
@@ -24,20 +24,18 @@ const CampaignsListing = (props) => {
   }
 
   return (
-    <div>
-      <List
-        grid={grid}
-        dataSource={campaigns}
-        rowKey='id'
-        renderItem={item => (
-          <List.Item>
-            <CampaignListItem
-              campaign={item}
-            />
-          </List.Item>
-        )}
-      />,
-    </div>
+    <List
+      grid={grid}
+      dataSource={campaigns}
+      rowKey='id'
+      renderItem={item => (
+        <List.Item>
+          <CampaignCard
+            campaign={item}
+          />
+        </List.Item>
+      )}
+    />
   )
 }
 
