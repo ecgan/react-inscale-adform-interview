@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Form, Input, DatePicker, Row, Col } from 'antd'
+import { Form, DatePicker, Row, Col } from 'antd'
 
 import dateFormat from '../_shared/dateFormat'
+import DebounceInput from './DebounceInput'
 
 const disableStartDate = (endDate) => (current) => {
   if (!endDate || !current) {
@@ -39,7 +40,9 @@ const FilterForm = (props) => {
           >
             {
               getFieldDecorator('name')(
-                <Input />
+                <DebounceInput
+                  autoComplete='off'
+                />
               )
             }
           </Form.Item>
