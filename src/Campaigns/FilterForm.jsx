@@ -45,6 +45,7 @@ const FilterForm = (props) => {
               getFieldDecorator('startDate')(
                 <DatePicker
                   disabledDate={disableStartDate(getFieldValue('endDate'))}
+                  format='MM/DD/YYYY'
                 />
               )
             }
@@ -58,6 +59,7 @@ const FilterForm = (props) => {
               getFieldDecorator('endDate')(
                 <DatePicker
                   disabledDate={disableEndDate(getFieldValue('startDate'))}
+                  format='MM/DD/YYYY'
                 />
               )
             }
