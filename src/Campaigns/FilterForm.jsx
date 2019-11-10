@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Form, Input, DatePicker, Row, Col } from 'antd'
 
+import dateFormat from '../_shared/dateFormat'
+
 const disableStartDate = (endDate) => (current) => {
   if (!endDate || !current) {
     return false
@@ -24,20 +26,28 @@ const FilterForm = (props) => {
 
   return (
     <Form>
-      <Form.Item
-        label='Name'
-      >
-        {
-          getFieldDecorator('name')(
-            <Input />
-          )
-        }
-      </Form.Item>
       <Row
         type='flex'
         gutter={8}
       >
-        <Col span={12}>
+        <Col
+          xs={24}
+          md={12}
+        >
+          <Form.Item
+            label='Name'
+          >
+            {
+              getFieldDecorator('name')(
+                <Input />
+              )
+            }
+          </Form.Item>
+        </Col>
+        <Col
+          xs={12}
+          md={6}
+        >
           <Form.Item
             label='Start Date'
           >
@@ -45,12 +55,17 @@ const FilterForm = (props) => {
               getFieldDecorator('startDate')(
                 <DatePicker
                   disabledDate={disableStartDate(getFieldValue('endDate'))}
+                  format={dateFormat}
+                  style={{ width: '100%' }}
                 />
               )
             }
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col
+          xs={12}
+          md={6}
+        >
           <Form.Item
             label='End Date'
           >
@@ -58,6 +73,8 @@ const FilterForm = (props) => {
               getFieldDecorator('endDate')(
                 <DatePicker
                   disabledDate={disableEndDate(getFieldValue('startDate'))}
+                  format={dateFormat}
+                  style={{ width: '100%' }}
                 />
               )
             }

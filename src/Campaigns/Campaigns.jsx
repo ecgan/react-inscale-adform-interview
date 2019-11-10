@@ -1,45 +1,31 @@
-import React, { useReducer, useCallback, useEffect } from 'react'
+import React from 'react'
+import { Layout } from 'antd'
 
+import useCampaignReducer from './useCampaignReducer'
+import useDispatchGlobalEffect from './useDispatchGlobalEffect'
 import CampaignFilter from './CampaignFilter'
+import styles from './Layout.module.css'
 
-const initialState = []
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'AddCampaigns':
-      return [
-        ...state,
-        ...action.data
-      ]
-    default:
-      throw new Error()
-  }
-}
+const { Header, Content } = Layout
 
 const Campaigns = () => {
-  const [campaigns, dispatch] = useReducer(reducer, initialState)
-
-  const addCampaigns = useCallback((campaigns) => {
-    dispatch({
-      type: 'AddCampaigns',
-      data: campaigns
-    })
-  }, [dispatch])
-
-  useEffect(() => {
-    window.AddCampaigns = addCampaigns
-
-    return () => {
-      window.AddCampaigns = undefined
-    }
-  }, [addCampaigns])
+  const [campaigns, dispatch] = useCampaignReducer()
+  useDispatchGlobalEffect(dispatch)
 
   return (
-    <div>
-      <h1>Campaigns</h1>
-      <CampaignFilter
-        campaigns={campaigns}
-      />
+    <div className={styles.layout}>
+      <Layout>
+        <Header>
+          <h1>
+            Campaigns
+          </h1>
+        </Header>
+        <Content>
+          <CampaignFilter
+            campaigns={campaigns}
+          />
+        </Content>
+      </Layout>
     </div>
   )
 }
