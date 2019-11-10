@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, Row, Col, Typography } from 'antd'
+import { Card, Row, Col, Typography, Icon } from 'antd'
+import abbreviate from 'number-abbreviate'
 
 import CampaignActiveTag from './CampaignActiveTag'
 import styles from './CampaignCard.module.css'
@@ -35,8 +36,9 @@ const CampaignListItem = (props) => {
         </h3>
         <Typography.Text
           type='secondary'
+          title={`Budget: ${campaign.Budget} USD`}
         >
-          {campaign.Budget} USD
+          <Icon type='dollar' /> {abbreviate(campaign.Budget)} USD
         </Typography.Text>
       </Card>
     </div>
