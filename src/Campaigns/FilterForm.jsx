@@ -2,9 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Form, Input, DatePicker, Row, Col } from 'antd'
 
+const disableStartDate = (endDate) => (current) => {
+  if (!endDate || !current) {
+    return false
+  }
+
+  return current > endDate
+}
+
+const disableEndDate = (startDate) => (current) => {
+  if (!startDate || !current) {
+    return false
+  }
+
+  return current < startDate
+}
+
 const FilterForm = (props) => {
   const { form } = props
-  const { getFieldDecorator } = form
+  const { getFieldDecorator, getFieldValue } = form
 
   return (
     <Form>
@@ -27,7 +43,9 @@ const FilterForm = (props) => {
           >
             {
               getFieldDecorator('startDate')(
-                <DatePicker />
+                <DatePicker
+                  disabledDate={disableStartDate(getFieldValue('endDate'))}
+                />
               )
             }
           </Form.Item>
@@ -38,7 +56,9 @@ const FilterForm = (props) => {
           >
             {
               getFieldDecorator('endDate')(
-                <DatePicker />
+                <DatePicker
+                  disabledDate={disableEndDate(getFieldValue('startDate'))}
+                />
               )
             }
           </Form.Item>
