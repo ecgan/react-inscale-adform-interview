@@ -39,7 +39,9 @@ const FilterForm = (props) => {
           >
             {
               getFieldDecorator('name')(
-                <Input />
+                <Input
+                  autoComplete='off'
+                />
               )
             }
           </Form.Item>
