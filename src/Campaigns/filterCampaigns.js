@@ -4,7 +4,7 @@ import { extendMoment } from 'moment-range'
 const moment = extendMoment(Moment)
 
 const filterCampaigns = (campaigns, filter) => {
-  const filterStartDate = filter.startDate && filter.startDate
+  const filterStartDate = filter.startDate && filter.startDate.startOf('day')
   const filterEndDate = filter.endDate && filter.endDate.endOf('day')
 
   return campaigns.filter(c => {
@@ -15,7 +15,7 @@ const filterCampaigns = (campaigns, filter) => {
       return false
     }
 
-    const campStartDate = moment(c.startDate)
+    const campStartDate = moment(c.startDate).startOf('day')
     const campEndDate = moment(c.endDate).endOf('day')
 
     if (filterStartDate) {

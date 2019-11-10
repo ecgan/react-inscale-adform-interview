@@ -9,7 +9,7 @@ const moment = extendMoment(Moment)
 const CampaignActiveTag = (props) => {
   const { campaign } = props
 
-  const start = moment(campaign.startDate)
+  const start = moment(campaign.startDate).startOf('day')
   const end = moment(campaign.endDate).endOf('day')
   const range = moment.range(start, end)
   const current = moment()
