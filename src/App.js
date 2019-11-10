@@ -1,11 +1,12 @@
 import React from 'react'
 
 import './App.css'
+import Campaigns from './Campaigns/Campaigns'
 
 const App = () => {
   return (
     <div className='App'>
-      <span>Hello world.</span>
+      <Campaigns />
     </div>
   )
 }
