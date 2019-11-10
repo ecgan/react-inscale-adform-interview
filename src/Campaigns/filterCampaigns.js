@@ -15,8 +15,8 @@ const filterCampaigns = (campaigns, filter) => {
       return false
     }
 
-    const campStartDate = moment(c.startDate).startOf('day')
-    const campEndDate = moment(c.endDate).endOf('day')
+    const campStartDate = moment(c.startDate, 'MM/DD/YYYY').startOf('day')
+    const campEndDate = moment(c.endDate, 'MM/DD/YYYY').endOf('day')
 
     if (campEndDate < campStartDate) {
       return false
