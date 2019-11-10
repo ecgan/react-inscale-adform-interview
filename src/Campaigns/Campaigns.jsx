@@ -1,38 +1,12 @@
-import React, { useReducer, useCallback, useEffect } from 'react'
+import React from 'react'
 
+import useCampaignReducer from './useCampaignReducer'
+import useDispatchGlobalEffect from './useDispatchGlobalEffect'
 import CampaignFilter from './CampaignFilter'
 
-const initialState = []
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'AddCampaigns':
-      return [
-        ...state,
-        ...action.data
-      ]
-    default:
-      throw new Error()
-  }
-}
-
 const Campaigns = () => {
-  const [campaigns, dispatch] = useReducer(reducer, initialState)
-
-  const addCampaigns = useCallback((campaigns) => {
-    dispatch({
-      type: 'AddCampaigns',
-      data: campaigns
-    })
-  }, [dispatch])
-
-  useEffect(() => {
-    window.AddCampaigns = addCampaigns
-
-    return () => {
-      window.AddCampaigns = undefined
-    }
-  }, [addCampaigns])
+  const [campaigns, dispatch] = useCampaignReducer()
+  useDispatchGlobalEffect(dispatch)
 
   return (
     <div>
