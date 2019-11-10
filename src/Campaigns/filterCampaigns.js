@@ -1,6 +1,8 @@
 import Moment from 'moment'
 import { extendMoment } from 'moment-range'
 
+import dateFormat from '../_shared/dateFormat'
+
 const moment = extendMoment(Moment)
 
 const filterCampaigns = (campaigns, filter) => {
@@ -15,8 +17,8 @@ const filterCampaigns = (campaigns, filter) => {
       return false
     }
 
-    const campStartDate = moment(c.startDate, 'MM/DD/YYYY').startOf('day')
-    const campEndDate = moment(c.endDate, 'MM/DD/YYYY').endOf('day')
+    const campStartDate = moment(c.startDate, dateFormat).startOf('day')
+    const campEndDate = moment(c.endDate, dateFormat).endOf('day')
 
     if (campEndDate < campStartDate) {
       return false

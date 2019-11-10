@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Form, Input, DatePicker, Row, Col } from 'antd'
 
+import dateFormat from '../_shared/dateFormat';
+
 const disableStartDate = (endDate) => (current) => {
   if (!endDate || !current) {
     return false
@@ -45,7 +47,7 @@ const FilterForm = (props) => {
               getFieldDecorator('startDate')(
                 <DatePicker
                   disabledDate={disableStartDate(getFieldValue('endDate'))}
-                  format='MM/DD/YYYY'
+                  format={dateFormat}
                 />
               )
             }
@@ -59,7 +61,7 @@ const FilterForm = (props) => {
               getFieldDecorator('endDate')(
                 <DatePicker
                   disabledDate={disableEndDate(getFieldValue('startDate'))}
-                  format='MM/DD/YYYY'
+                  format={dateFormat}
                 />
               )
             }

@@ -4,13 +4,15 @@ import { Tag } from 'antd'
 import Moment from 'moment'
 import { extendMoment } from 'moment-range'
 
+import dateFormat from '../_shared/dateFormat'
+
 const moment = extendMoment(Moment)
 
 const CampaignActiveTag = (props) => {
   const { campaign } = props
 
-  const start = moment(campaign.startDate, 'MM/DD/YYYY').startOf('day')
-  const end = moment(campaign.endDate, 'MM/DD/YYYY').endOf('day')
+  const start = moment(campaign.startDate, dateFormat).startOf('day')
+  const end = moment(campaign.endDate, dateFormat).endOf('day')
   const range = moment.range(start, end)
   const current = moment()
 
