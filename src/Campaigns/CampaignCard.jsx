@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, Descriptions, Statistic, Row, Col } from 'antd'
+import { Card, Row, Col, Typography } from 'antd'
 
 import CampaignActiveTag from './CampaignActiveTag'
 
@@ -8,34 +8,34 @@ const CampaignListItem = (props) => {
   const { campaign } = props
 
   return (
-    <Card
-      title={campaign.name}
-      extra={
-        <CampaignActiveTag campaign={campaign} />
-      }
-    >
+    <Card>
       <Row
         type='flex'
         justify='space-between'
+        align='middle'
+        style={{ marginBottom: '12px', height: '24px' }}
       >
-        <Col span={10}>
-          <Descriptions
-            size='middle'
-            layout='horizontal'
-            column={1}
-          >
-            <Descriptions.Item label='Start'>{campaign.startDate}</Descriptions.Item>
-            <Descriptions.Item label='End'>{campaign.endDate}</Descriptions.Item>
-          </Descriptions>
+        <Col>
+          <Typography.Text>
+            {campaign.startDate} - {campaign.endDate}
+          </Typography.Text>
         </Col>
-        <Col span={10}>
-          <Statistic
-            title='Budget'
-            value={campaign.Budget}
-            suffix='USD'
-          />
+        <Col>
+          <CampaignActiveTag campaign={campaign} />
         </Col>
       </Row>
+      <h3>
+        <Typography.Text
+          ellipsis
+        >
+          {campaign.name}
+        </Typography.Text>
+      </h3>
+      <Typography.Text
+        type='secondary'
+      >
+        {campaign.Budget} USD
+      </Typography.Text>
     </Card>
   )
 }
