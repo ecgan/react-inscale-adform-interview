@@ -18,20 +18,19 @@ const filterCampaigns = (campaigns, filter) => {
     const campStartDate = moment(c.startDate).startOf('day')
     const campEndDate = moment(c.endDate).endOf('day')
 
-    if (filterStartDate) {
-      if (campEndDate < filterStartDate) {
-        return false
-      }
-    }
-
-    if (filterEndDate) {
-      if (campStartDate > filterEndDate) {
-        return false
-      }
-    }
-
     if (campEndDate < campStartDate) {
       return false
+    }
+
+    if (filterStartDate && filterEndDate) {
+      const range = moment.range(filterStartDate, filterEndDate)
+
+      if (
+        !range.contains(campStartDate) &&
+        !range.contains(campEndDate)
+      ) {
+        return false
+      }
     }
 
     return true
