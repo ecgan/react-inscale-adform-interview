@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 
-import CampaignList from './CampaignList'
+import CampaignFilter from './CampaignFilter'
 
 const initialState = [
   { id: 1, name: 'Divavu', startDate: '9/19/2019', endDate: '11/10/2019', Budget: 88377 },
@@ -38,7 +38,7 @@ const Campaigns = () => {
   return (
     <div>
       <h1>Campaigns</h1>
-      <CampaignList
+      <CampaignFilter
         campaigns={campaigns}
       />
     </div>
