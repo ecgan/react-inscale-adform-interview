@@ -1,0 +1,17 @@
+.layout :global .ant-layout {
+  background: transparent;
+}
+
+.layout :global .ant-layout .ant-layout-header {
+  background: whitesmoke;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0 24px;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.layout :global .ant-layout .ant-layout-content {
+  padding: 12px 24px;
+  margin-top: 64px;
+}
