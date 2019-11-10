@@ -10,7 +10,7 @@ const filterCampaigns = (campaigns, filter) => {
   return campaigns.filter(c => {
     if (
       filter.name &&
-        !c.name.includes(filter.name)
+      !c.name.toLowerCase().includes(filter.name.toLowerCase())
     ) {
       return false
     }
