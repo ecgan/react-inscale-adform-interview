@@ -15,7 +15,7 @@ const grid = {
 }
 
 const CampaignList = (props) => {
-  const { campaigns = [] } = props
+  const { campaigns } = props
 
   if (campaigns.length === 0) {
     return (
