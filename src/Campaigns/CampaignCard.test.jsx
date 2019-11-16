@@ -1,6 +1,7 @@
 import React from 'react'
-import CampaignCard from './CampaignCard'
 import { render } from '@testing-library/react'
+
+import CampaignCard from './CampaignCard'
 
 test('Campaign card should render campaign name', () => {
   const campaignName = 'Forever Campaign'
