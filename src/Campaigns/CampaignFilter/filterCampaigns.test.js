@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-import dateFormat from '../_shared/dateFormat'
+import dateFormat from '../../_shared/dateFormat'
 import filterCampaigns from './filterCampaigns'
 
 test('empty campaigns should return empty', () => {

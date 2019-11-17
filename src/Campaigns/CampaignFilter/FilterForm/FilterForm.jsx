@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Form, DatePicker, Row, Col } from 'antd'
 
-import dateFormat from '../_shared/dateFormat'
-import DebounceInput from './DebounceInput'
+import dateFormat from '../../../_shared/dateFormat'
+import DebounceInput from './DebounceInput/DebounceInput'
 
 const disableStartDate = (endDate) => (current) => {
   if (!endDate || !current) {
