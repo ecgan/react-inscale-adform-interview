@@ -1,6 +1,6 @@
 # React INSCALE AdForm Interview
 
-[![Build Status](https://travis-ci.org/ecgan/react-inscale-adform-interview.svg?branch=master)](https://travis-ci.org/ecgan/react-inscale-adform-interview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/ecgan/react-inscale-adform-interview.svg?branch=master)](https://travis-ci.org/ecgan/react-inscale-adform-interview) [![codecov](https://codecov.io/gh/ecgan/react-inscale-adform-interview/branch/master/graph/badge.svg)](https://codecov.io/gh/ecgan/react-inscale-adform-interview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A React application to answer the interview assignment for a Technical Frontend Lead position in INSCALE / AdForm.
 
