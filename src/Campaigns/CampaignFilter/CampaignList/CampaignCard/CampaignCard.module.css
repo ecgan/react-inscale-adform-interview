@@ -1,0 +1,7 @@
+.campaignCard :global .ant-card-body {
+  padding: 12px;
+}
+
+.campaignCard :global .ant-card-body .ant-tag {
+  margin: 0;
+}
