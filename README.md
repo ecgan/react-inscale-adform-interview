@@ -10,7 +10,7 @@ A React application to answer the interview assignment for a Technical Frontend 
 
 ## Application Requirements
 
-Full requirement document is available [here](/docs/KUL-F-EHomework%20(004).docx).
+Full requirement document is available in the docs folder [here](/docs/KUL-F-EHomework%20(004).docx).
 
 > The application should be a simple page with the following elements:
 >
