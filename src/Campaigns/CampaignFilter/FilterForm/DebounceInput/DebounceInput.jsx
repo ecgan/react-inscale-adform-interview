@@ -11,7 +11,7 @@ const DebounceInput = class extends Component {
   }
 
   handleChange = (value) => {
-    const { onChange = () => {} } = this.props
+    const { onChange } = this.props
     onChange(value)
   }
 

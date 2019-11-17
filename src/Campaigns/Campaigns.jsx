@@ -3,8 +3,8 @@ import { Layout } from 'antd'
 
 import useCampaignReducer from './useCampaignReducer'
 import useDispatchGlobalEffect from './useDispatchGlobalEffect'
-import CampaignFilter from './CampaignFilter'
-import styles from './Layout.module.css'
+import CampaignFilter from './CampaignFilter/CampaignFilter'
+import styles from './Campaigns.module.css'
 
 const { Header, Content } = Layout
 

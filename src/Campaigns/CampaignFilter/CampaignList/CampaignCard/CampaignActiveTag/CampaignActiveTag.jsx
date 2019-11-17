@@ -4,7 +4,7 @@ import { Tag } from 'antd'
 import Moment from 'moment'
 import { extendMoment } from 'moment-range'
 
-import dateFormat from '../_shared/dateFormat'
+import dateFormat from '../../../../../_shared/dateFormat'
 
 const moment = extendMoment(Moment)
 

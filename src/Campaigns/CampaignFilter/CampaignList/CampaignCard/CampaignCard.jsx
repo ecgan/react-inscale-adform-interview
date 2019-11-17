@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Card, Row, Col, Typography, Icon } from 'antd'
 import abbreviate from 'number-abbreviate'
 
-import CampaignActiveTag from './CampaignActiveTag'
+import CampaignActiveTag from './CampaignActiveTag/CampaignActiveTag'
 import styles from './CampaignCard.module.css'
 
 const CampaignListItem = (props) => {

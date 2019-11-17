@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Empty, List } from 'antd'
 
-import CampaignCard from './CampaignCard'
+import CampaignCard from './CampaignCard/CampaignCard'
 
 const grid = {
   gutter: 16,
@@ -15,7 +15,7 @@ const grid = {
 }
 
 const CampaignList = (props) => {
-  const { campaigns = [] } = props
+  const { campaigns } = props
 
   if (campaigns.length === 0) {
     return (
