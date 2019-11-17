@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React INSCALE AdForm Interview
 
-## Available Scripts
+[![Build Status](https://travis-ci.org/ecgan/react-inscale-adform-interview.svg?branch=master)](https://travis-ci.org/ecgan/react-inscale-adform-interview) [![codecov](https://codecov.io/gh/ecgan/react-inscale-adform-interview/branch/master/graph/badge.svg)](https://codecov.io/gh/ecgan/react-inscale-adform-interview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-In the project directory, you can run:
+A React application to answer the interview assignment for a Technical Frontend Lead position in INSCALE / AdForm.
 
-### `npm start`
+[INSCALE](https://www.inscale.net/) supplies offshore development teams to technology companies who are looking to scale their development capacity.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[AdForm](https://site.adform.com/) is one of the world’s largest private and independent advertising technology companies.  The company is best known for its seamlessly integrated DSP, DMP, and Ad Server.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Application Requirements
 
-### `npm test`
+Full requirement document is available in the docs folder [here](/docs/KUL-F-EHomework%20(004).docx).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> The application should be a simple page with the following elements:
+>
+> * A list of Campaign which shows
+>   * The Name
+>   * The startDate
+>   * The endDate
+>   * A flag to state if the Campaign is active (a campaign is running when the current date is inside the start-end date range)
+>   * The Budget (in USD dollar)
+> * A Search Form before the list in order to filter the list by Campaign Name
+> * A DateRange component that filters the list of campaigns based on a Start and End Date.
+>   * If the campaign has a startDate that is contained in the range, it should show.
+>   * If the campaign has an endDate that is contained in the range, it should show.
+>   * You should not be able to select an end-date that is before the start-date.
+> * If the endDate is before the start Date, the campaign should not show.
 
-### `npm run build`
+In addition:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> The candidate will expose a global method called 'AddCampaigns' that takes an array of Campaigns and will render them.
+>
+> This function will be invoked from the browser’s JavaScript console for testing purposes. If it cannot be invoked, the submission will be rejected. The method is allowed to be called multiple times. If so, the new campaigns will append to the existing list.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This application is built with [Create React App](https://create-react-app.dev/).
 
-### `npm run eject`
+First, run `npm install` to install the dependencies.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`npm run start` to start the application in local development mode.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm run test` to run tests in watch mode.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`npm run test:coverage` to run tests with code coverage report.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Questions / Issues
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+If you have any question, feel free to open a GitHub issue, or reach out to me at Twitter [@ecgan](https://twitter.com/ecgan).
